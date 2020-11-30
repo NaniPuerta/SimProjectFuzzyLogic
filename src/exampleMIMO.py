@@ -2,15 +2,14 @@ from fuzzy import *
 from inference import *
 from defuzzyfy import *
 
-import matplotlib.pyplot as plt
-import numpy as np
-
+#Variables
 v1 = FuzzyVariable('x1')
 v2 = FuzzyVariable('x2')
 
 v3 = FuzzyVariable('y')
 v4 = FuzzyVariable('z')
 
+#Variable Sets
 f_set1 = FuzzySet('S', 0, 100)
 f_set2 = FuzzySet('M', 0, 100)
 f_set3 = FuzzySet('L', 0, 100)
@@ -35,6 +34,7 @@ v4.addSet('S',f_set1)
 v4.addSet('M',f_set2)
 v4.addSet('L',f_set3)
 
+#Rules
 r1 = FuzzyRule()
 r1.set_rule([(v1,f_set1), (v2,f_set1)], [(v3, f_set1), (v4,f_set3)])
 
@@ -64,6 +64,7 @@ r9.set_rule([(v1,f_set1), (v2,f_set3)], [(v3, f_set2), (v4,f_set2)])
 
 rule_base = [r1, r2, r3, r4, r5, r6, r7, r8, r9]
 
+#Example
 inpt = {'x1': 35, 'x2': 75}
 print(inpt)
 print("\nMamdani")
